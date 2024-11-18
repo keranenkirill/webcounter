@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on linux)" generated="2024-11-18T21:02:18.584299" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/kirillke/TKT/OHTU/webcounter/src/tests">
+<suite id="s1-s1" name="Increment" source="/home/kirillke/TKT/OHTU/webcounter/src/tests/increment.robot">
+<kw name="Open And Configure Browser" owner="resource" type="SETUP">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-11-18T21:02:18.724164" elapsed="0.000401"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-18T21:02:18.724987" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-11-18T21:02:18.918797" level="WARN">The chromedriver version (130.0.6723.116) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-11-18T21:02:19.147818" level="ERROR">Error terminating service process.
+Traceback (most recent call last):
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in __init__
+    self.start_session(capabilities)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 325, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/common/service.py", line 176, in _terminate_process
+    self.process.terminate()
+  File "/usr/lib/python3.12/subprocess.py", line 2211, in terminate
+    self.send_signal(signal.SIGTERM)
+  File "/usr/lib/python3.12/subprocess.py", line 2203, in send_signal
+    os.kill(self.pid, sig)
+PermissionError: [Errno 13] Permission denied</msg>
+<msg time="2024-11-18T21:02:19.148073" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-11-18T21:02:19.148270" level="FAIL">SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-11-18T21:02:18.724754" elapsed="0.425066">SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</status>
+</kw>
+<status status="FAIL" start="2024-11-18T21:02:18.723437" elapsed="0.426649">SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</status>
+</kw>
+<test id="s1-s1-t1" name="At start the counter is zero" line="7">
+<status status="FAIL" start="2024-11-18T21:02:19.150257" elapsed="0.000471">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</status>
+</test>
+<test id="s1-s1-t2" name="When button pressed twice the counter is two" line="12">
+<status status="FAIL" start="2024-11-18T21:02:19.151014" elapsed="0.000325">Parent suite setup failed:
+SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-18T21:02:19.151985" elapsed="0.000205"/>
+</kw>
+<status status="FAIL" start="2024-11-18T21:02:18.608859" elapsed="0.543395">Suite setup failed:
+SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+</status>
+</suite>
+<status status="FAIL" start="2024-11-18T21:02:18.585226" elapsed="0.567636"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Increment">Tests.Increment</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-18T21:02:18.918797" level="WARN">The chromedriver version (130.0.6723.116) detected in PATH at /usr/bin/chromedriver might not be compatible with the detected chrome version (131.0.6778.69); currently, chromedriver 131.0.6778.69 is recommended for chrome 131.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-11-18T21:02:19.147818" level="ERROR">Error terminating service process.
+Traceback (most recent call last):
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/chromium/webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 238, in __init__
+    self.start_session(capabilities)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 325, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created
+from unknown error: no chrome binary at /usr/bin/google-chrome
+Stacktrace:
+#0 0x56d89f12c1ca &lt;unknown&gt;
+#1 0x56d89ec5af60 &lt;unknown&gt;
+#2 0x56d89ec8dc0e &lt;unknown&gt;
+#3 0x56d89ec8c0a9 &lt;unknown&gt;
+#4 0x56d89ecd6c45 &lt;unknown&gt;
+#5 0x56d89ecd62e6 &lt;unknown&gt;
+#6 0x56d89eccaad3 &lt;unknown&gt;
+#7 0x56d89ec99b6f &lt;unknown&gt;
+#8 0x56d89ec9ab8e &lt;unknown&gt;
+#9 0x56d89f0fa31f &lt;unknown&gt;
+#10 0x56d89f0fe442 &lt;unknown&gt;
+#11 0x56d89f0e8827 &lt;unknown&gt;
+#12 0x56d89f0febc1 &lt;unknown&gt;
+#13 0x56d89f0cf68e &lt;unknown&gt;
+#14 0x56d89f11a998 &lt;unknown&gt;
+#15 0x56d89f11ab9a &lt;unknown&gt;
+#16 0x56d89f12ae78 &lt;unknown&gt;
+#17 0x74fd7eb7cac3 &lt;unknown&gt;
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kirillke/TKT/OHTU/webcounter/.venv/lib/python3.12/site-packages/selenium/webdriver/common/service.py", line 176, in _terminate_process
+    self.process.terminate()
+  File "/usr/lib/python3.12/subprocess.py", line 2211, in terminate
+    self.send_signal(signal.SIGTERM)
+  File "/usr/lib/python3.12/subprocess.py", line 2203, in send_signal
+    os.kill(self.pid, sig)
+PermissionError: [Errno 13] Permission denied</msg>
+</errors>
+</robot>
